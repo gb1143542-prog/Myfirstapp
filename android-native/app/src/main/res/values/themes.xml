@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base app theme — dark, no action bar (we use BottomNav + fragment nav) -->
+    <style name="Theme.OverlayCustomizer" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Neon blue primary -->
+        <item name="colorPrimary">@color/neon_blue</item>
+        <item name="colorPrimaryVariant">@color/neon_blue_dim</item>
+        <item name="colorOnPrimary">@color/dark_bg</item>
+
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="colorOnSecondary">@color/dark_bg</item>
+
+        <item name="android:colorBackground">@color/dark_bg</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/dark_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Splash screen background -->
+        <item name="android:windowBackground">@color/dark_bg</item>
+    </style>
+</resources>

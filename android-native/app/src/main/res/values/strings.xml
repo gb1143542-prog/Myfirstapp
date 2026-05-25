@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Overlay Customizer</string>
+    <string name="accessibility_service_label">Overlay Customizer Monitor</string>
+    <string name="accessibility_service_description">Monitors which app is in the foreground so Overlay Customizer can display your custom background image automatically.</string>
+    <string name="tile_label">Overlay</string>
+    <string name="perm_overlay_title">Draw Over Apps</string>
+    <string name="perm_overlay_desc">Required to display background images on top of other apps</string>
+    <string name="perm_accessibility_title">Accessibility Service</string>
+    <string name="perm_accessibility_desc">Monitors foreground app changes to trigger overlays</string>
+    <string name="perm_storage_title">Photo Access</string>
+    <string name="perm_storage_desc">Read images from your gallery for backgrounds</string>
+    <string name="service_active">Overlay service is active</string>
+    <string name="service_inactive">Overlay service stopped</string>
+    <string name="notification_title">Overlay Customizer</string>
+    <string name="notification_text">Monitoring for target apps…</string>
+    <string name="action_stop">Stop</string>
+</resources>
