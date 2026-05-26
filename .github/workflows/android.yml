@@ -30,7 +30,7 @@ jobs:
           chmod +x gradlew || true
         fi
 
-    - name: Clean and Build with Gradle
+    - name: Inject Missing Colors Everywhere & Build
       run: |
         if [ -d "android native" ]; then
           cd "android native"
@@ -38,9 +38,23 @@ jobs:
           cd "android-native"
         fi
         
-        # Pura puruna cache o temporary resource ku clean kariba
+        # Pura project re jouthi bi values folder achhi, sethi automatic missing colors inject kariba
+        find . -type d -name "values" | while read -r dir; do
+          echo "Injecting colors into $dir"
+          cat << 'EOF' > "$dir/colors_fixed.xml"
+          <?xml version="1.0" encoding="utf-8"?>
+          <resources>
+              <color name="neon_blue">#00FFFF</color>
+              <color name="neon_blue_dim">#008B8B</color>
+              <color name="dark_bg">#121212</color>
+              <color name="accent_cyan">#E0FFFF</color>
+              <color name="surface">#1F1F1F</color>
+              <color name="text_primary">#FFFFFF</color>
+          </resources>
+        EOF
+        done
+
+        # Clean check and compile debug
         ./gradlew clean
-        
-        # Missing resource generated file ku bypass kari direct assemble build kariba
         ./gradlew assembleDebug --no-daemon
         
