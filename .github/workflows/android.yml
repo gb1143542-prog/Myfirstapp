@@ -21,8 +21,22 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: cd 'android native' && chmod +x gradlew
+      run: |
+        if [ -d "android native" ]; then
+          cd "android native" && chmod +x gradlew
+        elif [ -d "android-native" ]; then
+          cd "android-native" && chmod +x gradlew
+        else
+          chmod +x gradlew || true
+        fi
 
     - name: Build with Gradle
-      run: cd 'android native' && ./gradlew build
-      
+      run: |
+        if [ -d "android native" ]; then
+          cd "android native" && ./gradlew build
+        elif [ -d "android-native" ]; then
+          cd "android-native" && ./gradlew build
+        else
+          ./gradlew build
+        fi
+        
